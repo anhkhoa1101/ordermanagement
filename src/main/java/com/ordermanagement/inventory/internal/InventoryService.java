@@ -33,7 +33,8 @@ class InventoryService implements InventoryApi {
     @Override
     @Transactional
     public void release(List<StockItem> items) {
-        for (StockItem item : items) {
+        // khóa theo cùng thứ tự với reserve() để tránh deadlock
+        for (StockItem item : items.stream().sorted(Comparator.comparing(StockItem::productId)).toList()) {
             lock(item.productId()).increase(item.quantity());
         }
     }
