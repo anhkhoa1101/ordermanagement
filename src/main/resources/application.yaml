@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: ordermanagement
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/ordermanagement}
+    username: ${SPRING_DATASOURCE_USERNAME:app}
+    password: ${SPRING_DATASOURCE_PASSWORD:app}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate        # schema do Flyway quản lý
+  flyway:
+    enabled: true
+    schemas: users,inventory,ordering,payment
+    create-schemas: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
