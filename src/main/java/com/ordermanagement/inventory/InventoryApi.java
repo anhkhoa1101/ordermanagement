@@ -15,4 +15,8 @@ public interface InventoryApi {
     record StockItem(UUID productId, int quantity) {}
 
     record ReservedItem(UUID productId, int quantity, BigDecimal unitPrice) {}
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 70e4663 (fix code)

@@ -32,4 +32,8 @@ RUN sed -i 's/\r$//' /usr/local/bin/docker-entrypoint.sh \
  && chmod +x /usr/local/bin/docker-entrypoint.sh
 EXPOSE 8080
 # Entrypoint chạy bằng root để khởi động PostgreSQL, sau đó hạ quyền xuống user "spring" cho ứng dụng Java.
+<<<<<<< HEAD
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
+=======
+ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
+>>>>>>> 70e4663 (fix code)
